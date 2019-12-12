@@ -42,5 +42,5 @@ ENTRYPOINT ["dotnet", "men_spa.dll"]
 ## Mở trình duyệt gõ 
     http://localhost:8080
 
-==Note==
+### Note
 Để tạo docker nhỏ hơn, ta có thể bỏ qua các thư mục bin\ obj\ bằng cách tạo file .dockerignore

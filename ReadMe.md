@@ -1,20 +1,21 @@
 ﻿# Bài số 3 của thầy Cường
 1. Tải DB : 
-    git clone https://github.com/TechMaster/AutoRestorePostgresql.git
+    'git clone https://github.com/TechMaster/AutoRestorePostgresql.git'
 2. Tạo DB  Postgresql và restore dữ liệu:
-    cd AutoRestorePostgresql
-    sh ./restore.sh
+    'cd AutoRestorePostgresql'
+    'sh ./restore.sh'
     ==> Kết quả nếu ok sẽ thấy được 5 records show lên màn hình.
-    docker ps --> Thấy có image postgres:latest là ok
+    'docker ps' --> Thấy có image postgres:latest là ok
 2. Tải men_spa về:
-    git clone --single-branch --branch 04_men_spa_form https://github.com/TechMaster/aspnetcore.git
+    'git clone --single-branch --branch 04_men_spa_form https://github.com/TechMaster/aspnetcore.git'
     Ở branch này thầy Cường đã thêm các phần kết nối với DB Postgresql nên các bạn ko cần sửa gì nữa.
 3. Tạo docker chạy asp core và add dự án men_spa vào
-    a. cd aspnetcore/men_spa
+    a. 'cd aspnetcore/men_spa'
     b. tạo file Dockerfile --> Sử dụng Visual Studio Code hoặc lệnh vi Dockerfile
 
-''''' ---------
-COPY *.csproj ./
+***
+
+'COPY *.csproj ./
 RUN dotnet restore "./men_spa.csproj"
 
 COPY . ./
@@ -30,15 +31,15 @@ EXPOSE 5001
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "men_spa.dll"]
-''''' ----------
+ENTRYPOINT ["dotnet", "men_spa.dll"]'
+***
 
-# Build docker
+## Build docker
     c. docker build --target build -t menspa .
-# Run docker
+## Run docker
     d. docker run -d -p 8080:80 -it menspa ls /app
-# Mở trình duyệt gõ 
+## Mở trình duyệt gõ 
     e. http://localhost:8080
 
-# Note
+==Note==
 Để tạo docker nhỏ hơn, ta có thể bỏ qua các thư mục bin\ obj\ bằng cách tạo file .dockerignore

@@ -36,11 +36,11 @@ ENTRYPOINT ["dotnet", "men_spa.dll"]
 ***
 
 ## Build docker
-    c. docker build --target build -t menspa .
+    docker build --target build -t menspa .
 ## Run docker
-    d. docker run -d -p 8080:80 -it menspa ls /app
+    docker run -d -p 8080:80 -it menspa ls /app
 ## Mở trình duyệt gõ 
-    e. http://localhost:8080
+    http://localhost:8080
 
 ==Note==
 Để tạo docker nhỏ hơn, ta có thể bỏ qua các thư mục bin\ obj\ bằng cách tạo file .dockerignore

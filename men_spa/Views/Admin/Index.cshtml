@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "_Admin";
+    ViewData["Title"] = "Admin";
+}
+<h1>Admin</h1>
+<ol>
+    @foreach (ContactModel contact in Model)
+    {
+        <li>@contact.email - @contact.message</li>
+    }
+</ol>

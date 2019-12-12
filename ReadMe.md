@@ -13,12 +13,10 @@
     a. cd aspnetcore/men_spa
     b. tạo file Dockerfile --> Sử dụng Visual Studio Code hoặc lệnh vi Dockerfile
 
-# --------------------------------------------------------------
-# Copy csproj and restore as distinct layers
+''''' ---------
 COPY *.csproj ./
 RUN dotnet restore "./men_spa.csproj"
 
-# Copy everything else and build
 COPY . ./
 RUN dotnet build "men_spa.csproj" -c Release -o /app
 
@@ -33,13 +31,14 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "men_spa.dll"]
-# --------------------------------------------------------------
+''''' ----------
 
 # Build docker
     c. docker build --target build -t menspa .
-# chạy docker
+# Run docker
     d. docker run -d -p 8080:80 -it menspa ls /app
-# Mở trình duyệt gõ http://localhost:8080
+# Mở trình duyệt gõ 
+    e. http://localhost:8080
 
 # Note
-# Để tạo docker nhỏ hơn, ta có thể bỏ qua các thư mục bin\ obj\ bằng cách tạo file .dockerignore
+Để tạo docker nhỏ hơn, ta có thể bỏ qua các thư mục bin\ obj\ bằng cách tạo file .dockerignore

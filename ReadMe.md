@@ -1,13 +1,13 @@
 ﻿# Bài số 3 của thầy Cường
 1. Tải DB : 
-    git clone https://github.com/TechMaster/AutoRestorePostgresql.git
+    - git clone https://github.com/TechMaster/AutoRestorePostgresql.git
 2. Tạo DB  Postgresql và restore dữ liệu:
     - cd AutoRestorePostgresql
     - sh ./restore.sh
     - Kết quả nếu ok sẽ thấy được 5 records show lên màn hình.
     - docker ps --> Thấy có image postgres:latest là ok
 2. Tải men_spa về:
-    git clone --single-branch --branch 04_men_spa_form https://github.com/TechMaster/aspnetcore.git
+    - git clone --single-branch --branch 04_men_spa_form https://github.com/TechMaster/aspnetcore.git
     - Ở branch này thầy Cường đã thêm các phần kết nối với DB Postgresql nên các bạn ko cần sửa gì nữa.
 3. Tạo docker chạy asp core và add dự án men_spa vào
     a. cd aspnetcore/men_spa

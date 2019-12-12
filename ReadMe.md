@@ -10,8 +10,8 @@
     - git clone --single-branch --branch 04_men_spa_form https://github.com/TechMaster/aspnetcore.git
     - Ở branch này thầy Cường đã thêm các phần kết nối với DB Postgresql nên các bạn ko cần sửa gì nữa.
 3. Tạo docker chạy asp core và add dự án men_spa vào
-    a. cd aspnetcore/men_spa
-    b. tạo file Dockerfile --> Sử dụng Visual Studio Code hoặc lệnh vi Dockerfile
+    - cd aspnetcore/men_spa
+    - Tạo file Dockerfile --> Sử dụng Visual Studio Code hoặc lệnh vi Dockerfile
 
 ***
 ```shell

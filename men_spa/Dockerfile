@@ -20,7 +20,6 @@ RUN dotnet build "men_spa.csproj" -c Release -o /app
 # Run the image, executing the command 'ls /app'
 #docker run -it menspa ls /app
 
-
 FROM build AS publish
 RUN dotnet publish "men_spa.csproj" -c Release -o /app
 
